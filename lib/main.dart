@@ -25,6 +25,8 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<Icon> checkResult = []; // List to store check icons
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -56,6 +58,15 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // The user picked true.
+                setState(() {
+                  checkResult.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                      size: 30.0,
+                    ),
+                  );
+                });
               },
               child: Text(
                 'True',
@@ -76,6 +87,15 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // The user picked false.
+                setState(() {
+                  checkResult.add(
+                    Icon(
+                      Icons.clear,
+                      color: Colors.red,
+                      size: 30.0,
+                    ),
+                  );
+                });
               },
               child: Text(
                 'False',
@@ -93,33 +113,9 @@ class _QuizPageState extends State<QuizPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Icon(
-                Icons.check,
-                color: Colors.green,
-                size: 30.0,
-              ),
-              Icon(
-                Icons.check,
-                color: Colors.green,
-                size: 30.0,
-              ),
-              Icon(
-                Icons.clear, // New icon for False
-                color: Colors.red,
-                size: 30.0,
-              ),
-              Icon(
-                Icons.clear, // New icon for False
-                color: Colors.red,
-                size: 30.0,
-              ),
-              Icon(
-                Icons.check, // Additional check icon
-                color: Colors.green,
-                size: 30.0,
-              ),
+              ...checkResult, // Spread the list of icons
               Text(
-                'Your Score: 0', // Replace with the actual score
+                'Your Score: ${checkResult.length}', // Display the score based on the number of icons
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
