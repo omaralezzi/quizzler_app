@@ -87,6 +87,37 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
+        // Row with Three Check Icons and Score
+        Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
+                Icons.check,
+                color: Colors.green,
+                size: 30.0,
+              ),
+              Icon(
+                Icons.check,
+                color: Colors.green,
+                size: 30.0,
+              ),
+              Icon(
+                Icons.check,
+                color: Colors.green,
+                size: 30.0,
+              ),
+              Text(
+                'Your Score: 0', // Replace with the actual score
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
