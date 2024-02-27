@@ -87,7 +87,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        // Row with Three Check Icons and Score
+        // Row with Check and Cross Icons and Score
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Row(
@@ -104,7 +104,17 @@ class _QuizPageState extends State<QuizPage> {
                 size: 30.0,
               ),
               Icon(
-                Icons.check,
+                Icons.clear, // New icon for False
+                color: Colors.red,
+                size: 30.0,
+              ),
+              Icon(
+                Icons.clear, // New icon for False
+                color: Colors.red,
+                size: 30.0,
+              ),
+              Icon(
+                Icons.check, // Additional check icon
                 color: Colors.green,
                 size: 30.0,
               ),
